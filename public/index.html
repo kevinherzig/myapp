@@ -12,10 +12,19 @@
 <body>
     <script src="index.js"></script>
     <script type="text/javascript">
-        var apiUrl = 'http://localhost:9090/google/test&search';
+        var apiUrl = 'http://localhost:8080/google?search=helloworld';
         fetch(apiUrl).then(response => {
             return response.json();
         }).then(data => {
+            data.forEach(element => {
+                document.write('<p>');
+                document.write('title: ');
+                document.write(element.title);
+                document.write('<p>');
+                document.write(element.link);
+
+            });
+
             // Work with JSON data here
             console.log(data);
         }).catch(err => {
