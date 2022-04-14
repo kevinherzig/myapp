@@ -6,6 +6,10 @@
 4. start debugging (F5)
 5. open a web browser and go to http://localhost:8080/index.html
 
+The primary code is in routes/google.js.  This is the module that gets called when you ask for /google.  
+
+The search works by 
+
 -- Kafka messages
 
 To write the search term to Kafka go into routes/google.js and set
@@ -23,9 +27,11 @@ https://towardsdatascience.com/how-to-install-apache-kafka-using-docker-the-easy
 Todo:
 
 1. Edit index.html to skin it to make it look more like mycigna.com
-2. Add a search box that then passes the entered value to the API.  Add "Site:mdlive.com" to the search term to limit the search.  I don't know if you can add a few sites by adding multiple site: designations in the search team
-3. Format the returned values to make them appear cleaner and appear as HTML links
-4. Find an off the shelf kafka client that can connect to the topic and display the messages w/o writing the client ourselves
+2. Add a search box to index.html that then passes the entered value to the API.  Look at the javascript code in that file, you'll have to read the content of the search box.
+3. Add "Site:mdlive.com" or some site to the search term to limit the search.  I don't know if you can add a few sites by adding multiple site: designations in the search team.
+4. When passing a typed in search term to the APi by encoding it in the URL make sure the term is properly escaped by calling encodeURIComponent() to convert spaces and special characters to the HTML % based escape codes
+5. Format the returned values to make them appear cleaner and appear as HTML links
+6. Find an off the shelf kafka client that can connect to the topic and display the messages w/o writing the client ourselves, or crate a client in .net or something.
 
 Good luck everyone!!!
 
