@@ -7,7 +7,7 @@ const googleIt = require('google-it')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var googleRouter = require('./routes/google');
+var cignaSearch = require('./routes/cignasearch');
 
 var app = express();
 
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/google', googleRouter);
+app.use('/cignasearch', cignaSearch);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

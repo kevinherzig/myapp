@@ -20,6 +20,8 @@ if (use_kafka)
 
 /* GET search results */
 router.get('/', function (req, res, next) {
+
+    // Potentially capture search term and stream out for analytics capture
     if (use_kafka)
         producer.send({
             topic: 'first_kafka_topic',

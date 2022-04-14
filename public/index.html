@@ -12,7 +12,8 @@
 <body>
     <script src="index.js"></script>
     <script type="text/javascript">
-        var apiUrl = 'http://localhost:8080/google?search=helloworld';
+        var encodedSearchTerm = encodeURIComponent('hello world');
+        var apiUrl = 'http://localhost:8080/cignasearch?search=' + encodedSearchTerm;
         fetch(apiUrl).then(response => {
             return response.json();
         }).then(data => {
