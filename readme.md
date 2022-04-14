@@ -8,14 +8,17 @@
 
 The primary code is in routes/google.js.  This is the module that gets called when you ask for /google.  
 
-The search works by 
+The NodeJS server will first look for any defined 'routes' or paths handled explicity by a router.  If it doesn't find a route then it looks in /public for a file that matches.  This is why /index.html will load index.html out of the public folder but /google will invoke the code in routes/google.js
 
--- Kafka messages
+
+-- Kafka messages howto ---
+
+By default kafka messages are disabled so that you can work on the html even if you don't have a kafka server running.
 
 To write the search term to Kafka go into routes/google.js and set
 const use_kafka = true;
 
-To run a kakfa server install docker then do:
+To install and run a kakfa server install docker then do:
 docker-compose -f docker-compose.yml up -d
 
 Follow the instructions on this page to create the topic:
